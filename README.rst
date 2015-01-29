@@ -1,5 +1,6 @@
 .. _docutils: http://docutils.sourceforge.net/
 .. _Django: https://www.djangoproject.com/
+.. _django-materialzie-css: https://pypi.python.org/pypi/django-materialize-css/
 .. _django-crispy-forms: https://github.com/maraujop/django-crispy-forms
 .. _Materialize: http://materializecss.com 
 
@@ -8,7 +9,8 @@ Introduction
 
 This is a `Django`_ application to add `django-crispy-forms`_ layout objects for `Materialize`_.
 
-This app does not embed a `Foundation`_ release, you will have to install it yourself.
+This app does not embed a `Materialize CSS`_ release, you will have to install `django-materialize-css`
+as a dependency.
 
 Links
 *****
