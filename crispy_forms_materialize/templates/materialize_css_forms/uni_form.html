@@ -8,7 +8,13 @@
 {% endif %}
 
 {% for field in form %}
-    {% include "materialize_css_forms/field.html" %}
+
+        {% cycle '<div class="row">' '' %}
+
+            {% include "materialize_css_forms/field.html" %}
+
+        {% cycle '' '</div>' %}
+
 {% endfor %}
 
 {% if form_style == "" or form_style %}
