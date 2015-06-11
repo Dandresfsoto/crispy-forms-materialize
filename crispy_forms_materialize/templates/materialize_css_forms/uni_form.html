@@ -1,5 +1,5 @@
 {% if form_show_errors %}
-    {% include "foundation-5/errors.html" %}
+    {% include "materialize_css_forms/errors.html" %}
 {% endif %}
 
 {% if form_style == "" or form_style %}
@@ -8,7 +8,9 @@
 {% endif %}
 
 {% for field in form %}
-    {% include "foundation-5/field.html" %}
+    {% cycle '<div class="row">' '' %}
+        {% include "materialize_css_forms/field.html" %}
+    {% cycle '' '</div>' %}
 {% endfor %}
 
 {% if form_style == "" or form_style %}
