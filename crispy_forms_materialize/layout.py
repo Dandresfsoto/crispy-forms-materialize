@@ -116,6 +116,19 @@ class Field(crispy_forms_layout.Field, Div):
     template = "{0}/field.html".format(TEMPLATE_PACK)
 
 
+class FileField(Field):
+    """
+    Field that exposes a file upload button in the materialize way
+    """
+    def __init__(self, field, *args, **kwargs):
+        self.field = field
+        if 'css_class' not in kwargs:
+            kwargs['css_class'] = 'file-path validate'
+
+        super(FileField, self).__init__(field, *args, **kwargs)
+
+    template = "{0}/field.file.html".format(TEMPLATE_PACK)
+
 class MultiField(crispy_forms_layout.MultiField):
     """
     MultiField container. Renders to a MultiField
