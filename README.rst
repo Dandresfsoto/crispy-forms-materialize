@@ -16,7 +16,7 @@ Links
 *****
 
 * Read the documentation on `Read the docs soon!`;
-* Download his `PyPi package <http://pypi.python.org/pypi/crispy-forms-materialize`;
+* Download his `PyPi package https://pypi.python.org/pypi/django-materialize-css/0.0.1`
 * Clone it on his `Github repository <https://github.com/edvm/crispy-forms-materialize`;
 
 Requires
