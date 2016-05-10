@@ -1,6 +1,6 @@
 .. _docutils: http://docutils.sourceforge.net/
 .. _Django: https://www.djangoproject.com/
-.. _django-materialize-css: https://pypi.python.org/pypi/django-materialize-css/
+.. _django-materialize-css: https://pypi.python.org/pypi/django-materialize-css/0.0.1
 .. _django-crispy-forms: https://github.com/maraujop/django-crispy-forms
 .. _Materialize: http://materializecss.com 
 
