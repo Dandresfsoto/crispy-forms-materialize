@@ -123,7 +123,8 @@ class FileField(Field):
     def __init__(self, field, *args, **kwargs):
         self.field = field
         if 'css_class' not in kwargs:
-            kwargs['css_class'] = 'file-path validate'
+            #kwargs['css_class'] = 'file-path validate'
+            kwargs['css_class'] = 'validate'
 
         super(FileField, self).__init__(field, *args, **kwargs)
 
@@ -216,3 +217,4 @@ class Hidden(crispy_forms_layout.Hidden):
     """
     input_type = 'hidden'
     field_classes = 'hidden'
+
