@@ -4,29 +4,38 @@
     {{ field }}
 {% else %}
     {% if field|is_checkbox %}
-    <p>
+    <{% if tag %}{{ tag }}{% else %}p{% endif %}>
     {% else %}
-    <div id="div_{{ field.auto_id }}" class="input-field {% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">
+    <{% if tag %}{{ tag }}{% else %}div{% endif %} id="div_{{ field.auto_id }}" class="input-field {% if field.errors and form_show_errors %} error{% endif %}{% if field|is_checkbox %} checkbox{% endif %}{% if field.css_classes %} {{ field.css_classes }}{% endif %}">
     {% endif %}
     {% spaceless %}
         {% if not field|is_checkbox and not field|is_checkboxselectmultiple %}
             {% crispy_field field %}
-        {% endif %}
 
-        {% if field.label %}
-            {% if field|is_checkbox %}
-                {% crispy_field field %}
+            {% if field.label and not tag %}
+                {% if field|is_checkbox %}
+                    {% crispy_field field %}
+                {% endif %}
+
+                <label for="{{ field.id_for_label }}" {% if field.field.required %}class="required"{% endif %}>
+                    {{ field.label|safe }}{% if field.field.required %}<span class="asterisk"> *</span>{% endif %}
+                </label>
+            {% endif %}
+        {% else %}
+            {% if field.label %}
+                {% if field|is_checkbox %}
+                    {% crispy_field field %}
+                {% endif %}
+
+                <label for="{{ field.id_for_label }}" {% if field.field.required %}class="required"{% endif %}>
+                    {{ field.label|safe }}{% if field.field.required %}<span class="asterisk"> *</span>{% endif %}
+                </label>
             {% endif %}
 
-            <label for="{{ field.id_for_label }}" {% if field.field.required %}class="required"{% endif %}>
-                {{ field.label|safe }}{% if field.field.required %}<span class="asterisk"> *</span>{% endif %}
-            </label>
+            {% if field|is_checkboxselectmultiple %}
+                {% include 'materialize_css_forms/layout/checkboxselectmultiple.html' %}
+            {% endif %}
         {% endif %}
-
-        {% if field|is_checkboxselectmultiple %}
-            {% include 'materialize_css_forms/layout/checkboxselectmultiple.html' %}
-        {% endif %}
-
         
 
         {% if form_show_errors %}
@@ -44,8 +53,8 @@
     {% endspaceless %}
 
     {% if field|is_checkbox %}
-    </p>
+    </{% if tag %}{{ tag }}{% else %}p{% endif %}>
     {% else %}
-    </div>
+    </{% if tag %}{{ tag }}{% else %}div{% endif %}>
     {% endif %}
 {% endif %}
