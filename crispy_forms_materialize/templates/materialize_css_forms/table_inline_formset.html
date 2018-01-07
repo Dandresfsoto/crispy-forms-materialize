@@ -17,7 +17,7 @@
     </div>
 
     <div class="table-container">
-        <table{% if form_id %} id="{{ form_id }}_table"{% endif%} class="bordered">
+        <table{% if form_id %} id="{{ form_id }}_table"{% endif%} class="highlight">
             <thead>
             {% if formset.readonly and not formset.queryset.exists %}
             {% else %}
