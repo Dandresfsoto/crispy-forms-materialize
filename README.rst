@@ -8,6 +8,10 @@ This repo is Deprecated
 =======================
 Please dont use me, i no longer have maintenance.
 
+Looking for someone to maintain the project
+===========================================
+If you are interested in continuing with the project and maintaining it, please send me an email.
+
 Introduction
 ============
 
