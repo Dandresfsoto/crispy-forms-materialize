@@ -4,6 +4,10 @@
 .. _django-crispy-forms: https://github.com/maraujop/django-crispy-forms
 .. _Materialize: http://materializecss.com 
 
+This repo is Deprecated
+=======================
+Please dont use me, i no longer have maintenance.
+
 Introduction
 ============
 
